@@ -19,7 +19,7 @@ public class PostController {
 	GenreRepository genreRepo;
 	
 	@RequestMapping("home")
-	public String getPost(Model model) {
+	public String getPosts(Model model) {
 		Collection<Post> posts = (Collection<Post>) postRepo.findAll();
 		model.addAttribute("posts", posts);
 //		Collection<Genre> genres = (Collection<Genre>) genreRepo.findAll();
