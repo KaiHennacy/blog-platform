@@ -41,7 +41,9 @@ public class Post {
 	}
 	
 	public void addTag(TagEntity tag) {
-		this.tags.add(tag);
+		if (!tags.contains(tag)) {
+			this.tags.add(tag);
+		}
 	}
 
 	public Long getId() {
@@ -87,6 +89,10 @@ public class Post {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public Collection getTags() {
+		return tags;
 	}
 
 		
