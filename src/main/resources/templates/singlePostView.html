@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <div class="flex-wrapper">
+            <img class="site-logo" src="" alt="site-logo">
+            <h1 class="site-name"></h1>
+            <nav class="nav-bar">
+                <ul>
+                    <li>Create +</li>
+                    <li>Tags</li>
+                    <li>Genres</li>
+                    <li>About</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+    
+            <section class="post">
+                <img class="post_image" src="">
+                <h3 class="post_header" th:text="${post.title}">My Trip to Cedar Point</h3>
+                <div class="by-line">
+                    <span class="author" th:text="${post.author}">Kai Hennacy</span>
+                    <span class="date"></span>
+                </div>
+                <p class="short-content" th:text="${post.content}">
+                    I had a really good time at Cedar Point! I loved the part when I went super fast down, and almost died. The ride's track broke and birds tried to eat my...
+                </p>
+            </section>
+        
+    </main>
+    <footer>
+            <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/kai-hennacy/" class="fa fa-linkedin"></a>
+                <a href="https://github.com/KaiHennacy" class="fa fa-github"></a>
+            </div>
+        </footer>
+
+</body>
+</html>
