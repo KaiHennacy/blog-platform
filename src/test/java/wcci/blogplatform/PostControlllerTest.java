@@ -16,6 +16,11 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
 
+import wcci.blogplatform.controllers.PostController;
+import wcci.blogplatform.models.Genre;
+import wcci.blogplatform.models.Post;
+import wcci.blogplatform.repos.PostRepository;
+
 
 public class PostControlllerTest {
 	

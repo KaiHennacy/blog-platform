@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="flex-wrapper">
             <img class="site-logo" src="" alt="site-logo">
             <h1 class="site-name"></h1>
@@ -22,15 +22,15 @@
                 </ul>
             </nav>
         </div>
-    </header>
-    <main>
-    
-            <section class="post">
-                <img class="post_image" src="">
-                <h3 class="post_header" th:text="${post.title}">My Trip to Cedar Point</h3>
+    </header> -->
+    <main class="main">       
+        <section class="post"> 
+                <h1 class="post_title" th:text="${post.title}">My Trip to Cedar Point</h1>
+                <h2 class="post_genre" th:text="${post.genre.name}">Travel</h2>
+                <h2 class="post_date" th:text="${post.date}">11/11/11</h2>
+                <!-- <img class="post_image" th:src=""> -->
                 <div class="by-line">
-                    <span class="author" th:text="${post.author}">Kai Hennacy</span>
-                    <span class="date"></span>
+                    <span class="author" th:text="${post.author.name}">Kai Hennacy</span>
                 </div>
                 <p class="short-content" th:text="${post.content}">
                     I had a really good time at Cedar Point! I loved the part when I went super fast down, and almost died. The ride's track broke and birds tried to eat my...
