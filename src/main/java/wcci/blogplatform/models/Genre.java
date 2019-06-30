@@ -1,4 +1,4 @@
-package wcci.blogplatform;
+package wcci.blogplatform.models;
 
 import java.util.Collection;
 
@@ -8,31 +8,32 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Author {
+public class Genre {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	@OneToMany(mappedBy = "author")
+	@OneToMany(mappedBy = "genre")
 	private Collection<Post> posts;
 	
 	private String name;
 	
-	protected Author() {
+	protected Genre() {
 	}
 	
-	public Author(String name) {
+	public Genre(String name) {
 		this.name = name;
 	}
 
 	public Collection<Post> getPosts() {
 		return posts;
 	}
-
+	
 	public void addPost(Post post) {
 		this.posts.add(post);
 	}
+
 
 	public Long getId() {
 		return id;
@@ -58,7 +59,7 @@ public class Author {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Author other = (Author) obj;
+		Genre other = (Genre) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -67,4 +68,5 @@ public class Author {
 		return true;
 	}
 
-}
+		
+	}

@@ -1,4 +1,4 @@
-package wcci.blogplatform;
+package wcci.blogplatform.controllers;
 
 import java.util.Collection;
 
@@ -9,6 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import wcci.blogplatform.models.Post;
+import wcci.blogplatform.models.TagEntity;
+import wcci.blogplatform.repos.AuthorRepository;
+import wcci.blogplatform.repos.GenreRepository;
+import wcci.blogplatform.repos.PostRepository;
+import wcci.blogplatform.repos.TagRepository;
 
 @Controller
 @RequestMapping("/")

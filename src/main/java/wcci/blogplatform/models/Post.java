@@ -1,7 +1,10 @@
-package wcci.blogplatform;
+package wcci.blogplatform.models;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,8 +29,11 @@ public class Post {
 	@ManyToMany
 	private Collection<TagEntity> tags = new ArrayList<TagEntity>();
 	
+	
+	
 	private String title;
 	private String content;
+	private LocalDateTime date;
 	
 	protected Post() {
 		
@@ -38,6 +44,7 @@ public class Post {
 		this.author = author;
 		this.content = content;
 		this.genre = genre;
+		this.date = LocalDateTime.now();
 	}
 	
 	public void addTag(TagEntity tag) {
@@ -64,6 +71,11 @@ public class Post {
 
 	public String getContent() {
 		return content;
+	}
+	
+	public String getDate() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		return dtf.format(date);
 	}
 
 	@Override

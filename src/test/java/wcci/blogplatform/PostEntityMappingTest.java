@@ -11,6 +11,14 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import wcci.blogplatform.models.Author;
+import wcci.blogplatform.models.Genre;
+import wcci.blogplatform.models.Post;
+import wcci.blogplatform.repos.AuthorRepository;
+import wcci.blogplatform.repos.GenreRepository;
+import wcci.blogplatform.repos.PostRepository;
+import wcci.blogplatform.repos.TagRepository;
+
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class PostEntityMappingTest {

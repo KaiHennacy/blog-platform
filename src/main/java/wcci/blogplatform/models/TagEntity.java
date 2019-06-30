@@ -1,4 +1,4 @@
-package wcci.blogplatform;
+package wcci.blogplatform.models;
 import java.util.ArrayList;
 import java.util.Collection;
 
