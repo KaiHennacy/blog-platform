@@ -25,9 +25,15 @@
     </header> -->
     <main class="main">       
         <section class="post"> 
-                <h1 class="post_title" th:text="${post.title}">My Trip to Cedar Point</h1>
-                <h2 class="post_genre" th:text="${post.genre.name}">Travel</h2>
-                <h2 class="post_date" th:text="${post.date}">11/11/11</h2>
+                <h1 class="post_title" th:text="${post.title}">
+                    My Trip to Cedar Point
+                </h1>
+                <span class="post_date" th:text="${post.date}">
+                    11/11/11
+                </span>
+                <h2 class="post_genre" th:text="${post.genre.name}">
+                    Travel
+                </h2>
                 <!-- <img class="post_image" th:src=""> -->
                 <div class="by-line">
                     <span class="author" th:text="${post.author.name}">Kai Hennacy</span>
@@ -35,7 +41,25 @@
                 <p class="short-content" th:text="${post.content}">
                     I had a really good time at Cedar Point! I loved the part when I went super fast down, and almost died. The ride's track broke and birds tried to eat my...
                 </p>
-            </section>
+        </section>
+
+        <section class="tags">
+            <h2>Tags</h2>
+            <ul class="tags_body">
+                <li th:each="tag : ${post.tags}" th:text="${tag.name}">
+                    Tag
+                </li>
+            </ul>
+
+            <form class="tags_form" action = "/add-tag" method="POST">
+                <label>
+                    Tag name
+                    <input type="text" name="name" value="ex: happy"/>
+                    <input type="hidden" name="id" th:value="${post.id}"/>
+                </label>
+                <button type="submit">Add Tag</button>
+            </form>
+        </section>
         
     </main>
     <footer>
