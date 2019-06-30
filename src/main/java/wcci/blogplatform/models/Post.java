@@ -72,6 +72,9 @@ public class Post {
 	public String getContent() {
 		return content;
 	}
+	public String getShortContent() {
+		return content.substring(0, 50) + "...";
+	}
 	
 	public String getDate() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
