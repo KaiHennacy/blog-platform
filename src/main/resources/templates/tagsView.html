@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <!-- <header>
+        <div class="flex-wrapper">
+            <img class="site-logo" src="" alt="site-logo">
+            <h1 class="site-name">Kaissaac's Foosball Journey</h1>
+            <nav class="nav-bar">
+                <ul class="nav-bar_list">
+                    <li th:href="@{~/add-post}">Create +</li>
+                    <li>Tags</li>
+                    <li>Genres</li>
+                    <li>About</li>
+                </ul>
+            </nav>
+        </div>
+    </header> -->
+    <main>
+        <section class="tags-list">
+            <article class="tag-item" th:each="tag: ${tags}">
+                <a th:href="|/tags/${tag.id}|">
+                    <h3 class="tag-title" th:text="${tag.name}">Tag</h3>
+                </a>
+            </article>
+        </section>
+
+        <section>
+            <h4>Create a Tag</h4>
+            <form class="tag-form" action="add-empty-tag" method="POST">
+                <label>
+                    <h2>New Tag</h2>
+                    <input type="text" name="name" placeholder="ex: Fun"/>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+
+        </section>
+    </main>
+    <footer>
+            <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/kai-hennacy/" class="fa fa-linkedin"></a>
+                <a href="https://github.com/KaiHennacy" class="fa fa-github"></a>
+            </div>
+        </footer>
+
+</body>
+</html>
