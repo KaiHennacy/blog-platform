@@ -41,7 +41,7 @@ public class PostEntityMappingTest {
 	@Test
 	public void shouldSaveAndLoadPost() {
 		Author testAuthor = new Author("");
-		Genre testGenre = new Genre();
+		Genre testGenre = new Genre("");
 		Post testPost = new Post("My Trip to Cedar Point", testAuthor, "fun trip", testGenre);
 		postRepo.save(testPost);
 		authorRepo.save(testAuthor);
@@ -56,7 +56,7 @@ public class PostEntityMappingTest {
 	@Test
 	public void shouldSaveAndLoadGenre() {
 		Author testAuthor = new Author("");
-		Genre testGenre = new Genre();
+		Genre testGenre = new Genre("");
 		Post testPost = new Post("My Trip to Cedar Point", testAuthor, "fun trip", testGenre);
 		postRepo.save(testPost);
 		authorRepo.save(testAuthor);
@@ -66,12 +66,12 @@ public class PostEntityMappingTest {
 		
 		Genre foundGenre = genreRepo.findById(testGenre.getId()).get();
 		assertThat(foundGenre, is(testGenre));
-		assertThat(foundGenre.getType()).isEqualTo(testGenre.getType());		
+		assertThat(foundGenre.getName()).isEqualTo(testGenre.getName());		
 	}
 	@Test
 	public void shouldSaveAndLoadAuthor() {
 		Author testAuthor = new Author("");
-		Genre testGenre = new Genre();
+		Genre testGenre = new Genre("");
 		Post testPost = new Post("My Trip to Cedar Point", testAuthor, "fun trip", testGenre);
 		postRepo.save(testPost);
 		authorRepo.save(testAuthor);

@@ -36,11 +36,11 @@ public class PostControlllerTest {
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
 	}
-	Genre genre = new Genre();
+	Genre genre = new Genre("");
 	
 	@Test
 	public void shouldReturnOnePost() {
-		Post testPost = new Post();
+		Post testPost = new Post("", null, "", genre);
 		List<Post> testPosts = Collections.singletonList(testPost);
 		Mockito.when(mockPostRepo.findAll()).thenReturn(testPosts);
 		underTest.getPosts(mockModel);
@@ -48,9 +48,9 @@ public class PostControlllerTest {
 	}
 	@Test
 	public void shouldReturnAllReviews() {
-		Post testPost1 = new Post();
-		Post testPost2 = new Post();
-		Post testPost3 = new Post();
+		Post testPost1 = new Post("", null, "", genre);
+		Post testPost2 = new Post("", null, "", genre);
+		Post testPost3 = new Post("", null, "", genre);
 		List<Post> testPosts= Arrays.asList(testPost1,testPost2,testPost3);
 		Mockito.when(mockPostRepo.findAll()).thenReturn(testPosts);
 		underTest.getPosts(mockModel);
