@@ -35,8 +35,8 @@ public class GenreController {
 		return "singleGenreView";
 	}
 	
-	@PostMapping("add-genre")
-	public String addGenre(String name) throws Exception{
+	@PostMapping("addgenre")
+	public String addGenre(String name) throws Exception {
 //		Collection<Genre> genres = (Collection<Genre>) genreRepo.findAll();
 //		if(!genres.contains(genreRepo.findByName(name))) {
 			Genre genreToAdd = new Genre(name);

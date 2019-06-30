@@ -32,17 +32,15 @@
             </article>
         </section>
 
-        <section>
-            <h4>Create a Genre</h4>
-            <form class="genre-form" action="/add-genre" method="POST">
-                <label>
-                    <h2>New Genre</h2>
-                    <input type="text" name="name" value="ex: Travel"/>
-                </label>
-                <button type="submit">Submit</button>
-            </form>
+    
+        <form class="genre-form" action="/add-genre/" method="POST">
+            <label class="genre-form__field">Genre:
+              <input type="text" name="genre" placeholder="Genre" />
+            </label>
+            <button type="submit">Submit</button>
+          </form>
+       
 
-        </section>
     </main>
     <footer>
             <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
