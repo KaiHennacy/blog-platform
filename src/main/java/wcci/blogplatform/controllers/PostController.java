@@ -47,11 +47,17 @@ public class PostController {
 		model.addAttribute("post", postRepo.findById(id).get());
 		return "singlePostView";
 	}
+	@RequestMapping("new")
+	public String getNewPost(Model model) {
+		model.addAttribute("genres", genreRepo.findAll());
+		model.addAttribute("authors", authorRepo.findAll());
+		return "newPostView";
+	}
 	@PostMapping("add-post")
 	public String addPost(String title, String author, String content, String genre) {
 		Post postAdd = new Post(title, authorRepo.findByName(author), content, genreRepo.findByName(genre));
 		postRepo.save(postAdd);
-		return "redirect:/posts/" + postAdd.getId(); 
+		return "redirect:/" + postAdd.getId(); 
 	}
 	@PostMapping("add-tag")
 	public String addTag(String name, Long id) throws Exception{
@@ -63,7 +69,7 @@ public class PostController {
 			postRepo.findById(id).get().addTag(tagRepo.save(tagRepo.findByName(name)));
 			postRepo.save(postRepo.findById(id).get());	
 		}
-		return "redirect:/posts/" + id;
+		return "redirect:/" + id;
 	}
 
 }
