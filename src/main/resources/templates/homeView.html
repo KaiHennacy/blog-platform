@@ -16,14 +16,15 @@
                 <ul class="nav-bar_list">
                     <li th:href="@{~/add-post}">Create Post+</li>
                 </ul>
-                  
+                        <a class="header__text" href="/genres/">See All Genres</a>
+                        </header>
             </nav>
         </div>
     </header> 
     <main>
         <div class="post-river">
             <section class="post" th:each="post: ${posts}">
-                <a th:href="@{${post.id}}">
+                    <a th:href="|/${post.id}|">
                     <img class="post_image" src="">
                     <h3 class="post_header" th:text="${post.title}">My Trip to Cedar Point</h3>
                 </a>

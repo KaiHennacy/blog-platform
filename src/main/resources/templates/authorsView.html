@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Authors</title>
 </head>
 <body>
+    <Header> 
+        <h1 class=header_text>All Authors</h1>
+        <a class="header__text" href="/home/">Home</a> 
+    </Header>
 <main>
     <div class="author-list">
                 <section class="author" th:each="author: ${authors}">
                     <a th:href="|/authors/${author.id}|">
-                        <h3 class="author-content" th:text="${author.name}"></h3>
-                        <h3 class="author-content" th:text="${author.posts}"></h3>
+                        <h3 class="author-content" th:text="${author.name}"> </h3>
                     </a>
                 </section>
             </div>
