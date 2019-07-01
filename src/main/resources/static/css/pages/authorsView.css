@@ -1,4 +1,4 @@
-.tag-list {
+.author-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 2rem;
@@ -6,8 +6,8 @@
 	width: 100%;
 }
 
-.tag {
-	background-color: var(--green);
+.author {
+	background-color: var(--light-brown);
 	padding: 2rem;
 	margin: 1rem;
 	display: flex;
@@ -17,13 +17,16 @@
 	min-width: min-content;
 	border-radius: 0.5rem;
 }
-
-.tag-title {
+.author-name {
 	font-weight: bold;
-	font-size: 2rem;
-	color: var(--white);
+	font-size: 2.5rem;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--black);
+	-webkit-text-fill-color: var(--yellow);
 }
 
-.tag-title:hover {
-	color: var(--light-brown);
+.author-name:hover {
+	-webkit-text-stroke-color: var(--white);
+	-webkit-text-fill-color: var(--light-brown);
 }
+

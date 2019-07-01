@@ -12,3 +12,10 @@
     max-width: 40vw;
 	padding: 1rem;
 }
+
+.post__title {
+	font-size: 3rem;
+	font-weight: bold;
+	color: var(--black);
+	padding: 1rem;
+}

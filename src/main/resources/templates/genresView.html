@@ -22,11 +22,13 @@
                     <li><a th:href="@{~/posts}">Posts</a></li>
                     <li><a th:href="@{~/tags/}">Tags</a></li>
                     <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/authors/}">Authors</a></li>
                     <li><a th:href="@{~/posts/new}">Create+</a></li>
                 </ul> 
             </nav>
-    </header> 
+    </header>  
     <main>
+    <div class="main-wrapper">
         <section class="genre-list">
             <article class="genre-item" th:each="genre: ${genres}">
                 <a th:href="|/genres/${genre.id}|">
@@ -35,15 +37,15 @@
             </article>
         </section>
 
-    
-        <form class="genre-form" action="add-genre" method="POST">
-            <label class="genre-form__field">Genre:
-              <input type="text" name="name" placeholder="Genre" />
-            </label>
-            <button type="submit">Submit</button>
+        <section class="new-genre-form">
+            <form class="genre-form" action="add-genre" method="POST">
+                <label class="genre-form__field">Genre:
+                    <input type="text" name="name" placeholder="Genre" />
+                </label>
+                <button type="submit">Submit</button>
           </form>
-       
-
+        </section>
+    </div>
     </main>
     <footer class="footer">
             <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>

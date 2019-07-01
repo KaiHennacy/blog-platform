@@ -23,10 +23,11 @@
                     <li><a th:href="@{~/posts}">Posts</a></li>
                     <li><a th:href="@{~/tags/}">Tags</a></li>
                     <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/authors/}">Authors</a></li>
                     <li><a th:href="@{~/posts/new}">Create+</a></li>
                 </ul> 
             </nav>
-    </header> 
+    </header>  
     <main>
         <div class="main-wrapper">
             <section class="greeting">
@@ -41,7 +42,7 @@
             </section>
             <section class="recent-post">
                 <a th:href="|/${post.id}|">
-                    <h3 class="post_header" th:text="${post.title}">My Trip to Cedar Point</h3>
+                    <h3 class="post__title" th:text="${post.title}">My Trip to Cedar Point</h3>
                 </a>
                     <div class="by-line">
                         <span class="author" th:text="${post.author.name}">Kai Hennacy</span>

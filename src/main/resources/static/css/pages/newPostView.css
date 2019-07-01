@@ -1,4 +1,4 @@
-.review-form {
+.post-form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -6,12 +6,12 @@
 	flex-grow: 1;
 }
 
-.review-form h2 {
+.post-form h2 {
 	font-weight: bold;
 	font-size: 1.5rem;
 }
 
-.review-form input {
+.post-form input {
 	line-height: 3rem;
 	min-width: 30vw;
 }

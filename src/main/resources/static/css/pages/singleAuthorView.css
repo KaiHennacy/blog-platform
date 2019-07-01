@@ -1,0 +1,43 @@
+.author {
+	background-color: var(--light-brown);
+	padding: 2rem;
+	margin: 1rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	min-width: min-content;
+	border-radius: 0.5rem;
+}
+.author-name {
+	font-weight: bold;
+	font-size: 2.5rem;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--black);
+	-webkit-text-fill-color: var(--yellow);
+}
+.post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+.post {
+    margin: 1rem;
+}
+  
+.post h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--black);
+    -webkit-text-fill-color: var(--yellow);
+}
+  
+.post h1:hover {
+    font-size: 2.7rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--white);
+    -webkit-text-fill-color: var(--green);
+}

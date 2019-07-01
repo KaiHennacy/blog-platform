@@ -1,4 +1,4 @@
-.category-card-gallery {
+.genre-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 2rem;
@@ -6,7 +6,7 @@
 	width: 100%;
 }
 
-.card {
+.genre-item {
 	background-color: var(--light-brown);
 	padding: 2rem;
 	margin: 1rem;
@@ -17,7 +17,7 @@
 	min-width: min-content;
 	border-radius: 0.5rem;
 }
-.card__title {
+.genre-title {
 	font-weight: bold;
 	font-size: 2.5rem;
 	-webkit-text-stroke-width: 1px;
@@ -25,7 +25,7 @@
 	-webkit-text-fill-color: var(--yellow);
 }
 
-.card__title:hover {
+.genre-title:hover {
 	-webkit-text-stroke-color: var(--white);
 	-webkit-text-fill-color: var(--light-brown);
 }

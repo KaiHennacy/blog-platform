@@ -73,7 +73,10 @@ public class Post {
 		return content;
 	}
 	public String getShortContent() {
+		if(content.length()>50) {
 		return content.substring(0, 50) + "...";
+		}
+		return content;
 	}
 	
 	public String getDate() {

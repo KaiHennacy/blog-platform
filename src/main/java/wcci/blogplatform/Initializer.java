@@ -31,11 +31,17 @@ public class Initializer implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Genre travel = new Genre("travel");
+		Genre travel = new Genre("Travel");
 		genreRepo.save(travel);
 		
-		Genre pets = new Genre("pets");
+		Genre pets = new Genre("Pets");
 		genreRepo.save(pets);
+		
+		Genre food = new Genre("Food");
+		genreRepo.save(food);
+		
+		Genre business = new Genre("Business");
+		genreRepo.save(business);
 		
 		Author kai = new Author("Kai Hennacy");
 		authorRepo.save(kai);
@@ -48,6 +54,12 @@ public class Initializer implements CommandLineRunner {
 		
 		TagEntity cat = new TagEntity("cat");
 		tagRepo.save(cat);
+		
+		TagEntity vacation = new TagEntity("vacation");
+		tagRepo.save(vacation);
+		
+		TagEntity clothing = new TagEntity("clothing");
+		tagRepo.save(clothing);
 
 		
 		

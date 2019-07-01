@@ -22,38 +22,42 @@
                     <li><a th:href="@{~/posts}">Posts</a></li>
                     <li><a th:href="@{~/tags/}">Tags</a></li>
                     <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/authors/}">Authors</a></li>
                     <li><a th:href="@{~/posts/new}">Create+</a></li>
                 </ul> 
             </nav>
-    </header> 
-    <main class="main">       
-        <form class="post-form" action="/add-post" method="POST">
-            <label>
-                <h2>Title:</h2>
-                <input type="text" name="title" value="That One Time When I..."/>
-            </label>
-            <label>
-                <h2>Author:</h2>
-                <input list="authors" name="author"/>
-                <datalist id="authors">
+    </header>  
+    <main class="main">
+        <div class="main-wrapper">      
+            <form class="post-form" action="/add-post" method="POST">
+                <label>
+                    <h2>Title:</h2>
+                    <input type="text" name="title" value="That One Time When I..."/>
+                </label>
+
+                <label>
+                    <h2>Author:</h2>
+                    <input list="authors" name="author"/>
+                    <datalist id="authors">
                         <option th:each="author: ${authors}" th:value="${author.name}"></option>
-                </datalist>
-            </label>
-            <label>
-                <h2>Genre:</h2>
-                <input list="genres" name="genre"/>
-                <datalist id="genres">
-                    <option th:each="genre: ${genres}" th:value="${genre.name}"></option>
-                </datalist>
-            </label>
-            <label>
-                <h2>Content</h2>
-                <input type="text" name="content" value="What happened?"/>
-            </label>
+                    </datalist>
+                </label>
+
+                <label>
+                    <h2>Genre:</h2>
+                    <input list="genres" name="genre"/>
+                    <datalist id="genres">
+                        <option th:each="genre: ${genres}" th:value="${genre.name}"></option>
+                    </datalist>
+                </label>
+
+                <label>
+                    <h2>Content</h2>
+                    <input type="text" name="content" value="What happened?"/>
+                </label>
                 <button type="submit">Finalize Post</button>
             </form>
-        </section>
-        
+        </div> 
     </main>
     <footer class="footer">
             <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>

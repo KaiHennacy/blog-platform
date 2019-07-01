@@ -22,22 +22,24 @@
                     <li><a th:href="@{~/posts}">Posts</a></li>
                     <li><a th:href="@{~/tags/}">Tags</a></li>
                     <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/authors/}">Authors</a></li>
                     <li><a th:href="@{~/posts/new}">Create+</a></li>
                 </ul> 
             </nav>
     </header> 
-    <main class="main">       
+    <main class="main">
+    <div class="main-wrapper">       
         <h1 class="genre-title" th:text="${genre.name}">
             Travel
         </h1>
-        <section class="post-Container">
+        <section class="post-container">
             <div class="post" th:each="post: ${genre.posts}">
                 <a th:href="|/${post.id}|">
                     <h1 th:text="${post.title}"></h1>
                 </a>
             </div>
         </section>
-        
+    </div>
     </main>
     <footer class="footer">
             <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>

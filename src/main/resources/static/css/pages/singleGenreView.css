@@ -1,4 +1,4 @@
-.category-title {
+.genre-title {
 	font-weight: bold;
 	font-size: 4rem;
 	-webkit-text-stroke-width: 1px;
@@ -7,7 +7,7 @@
 	margin: 3rem;
 }
 
-.review-container {
+.post-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -15,16 +15,16 @@
 	flex-grow: 1;
 }
 
-.review {
+.post {
 	margin: 1rem;
 }
 
-.review h1 {
+.post h1 {
 	font-size: 2.5rem;
 	color: var(--green);
 }
 
-.review h1:hover {
+.post h1:hover {
 	font-size: 3rem;
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: var(--white);

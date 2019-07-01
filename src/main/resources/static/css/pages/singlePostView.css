@@ -7,6 +7,10 @@
 	flex-grow: 1;
 }
 
+.main-wrapper{
+	max-width: 90vw;
+}
+
 .post__title {
 	font-size: 3rem;
 	font-weight: bold;
@@ -57,32 +61,4 @@
 
 .tags__form {
 	padding: 1rem;
-}
-
-.comments {
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-}
-
-.comments__count {
-	font-size: 2rem;
-	font-weight: bold;
-	color: var(--black);
-	padding: 0.5rem;
-}
-
-.comments__body {
-	font-size: 1.5rem;
-	padding: 1rem;
-	background-color: var(--green);
-}
-
-.comments__body p {
-	margin: 1rem;
-	padding: 1rem;
-	color: var(--green);
-	background-color: var(--white);
 }
