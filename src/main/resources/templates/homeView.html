@@ -33,21 +33,22 @@
             <section class="greeting">
                 <div class="avatar">
                     <h1>Hi, I'm Isaac</h1>
-                    <img th:src="@{images/isaac.jpg}" alt="Image missing"/>
+                    <img th:src="@{images/isaac.png}" alt="Image missing"/>
                 </div>
                 <div class="avatar">
                     <h1>Hi, I'm Kai</h1>
                     <img th:src="@{images/kai.png}" alt="Image missing"/>
                 </div>
             </section>
+
             <section class="recent-post">
                 <a th:href="|/${post.id}|">
                     <h3 class="post__title" th:text="${post.title}">My Trip to Cedar Point</h3>
                 </a>
                     <div class="by-line">
-                        <span class="author" th:text="${post.author.name}">Kai Hennacy</span>
-                        <span class="genre" th:text="${post.genre.name}"></span>
-                        <span class="tags" th:each="tag : ${post.tags}" th:text="${tag.name}"></span>
+                        <a th:href="|/authors/${post.author.id}|"><span class="author" th:text="${post.author.name}">Kai Hennacy</span></a>
+                        <a th:href="|/genres/${post.genre.id}|"><span class="genre" th:text="${post.genre.name}">Travel</span></a>
+                        <a th:each="tag : ${post.tags}" th:href="|/tags/${tag.id}|"><span class="tags" th:text="${tag.name}">Fun</span></a>
                     </div>
             </section>
         </div>

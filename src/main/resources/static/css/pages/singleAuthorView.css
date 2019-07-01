@@ -41,3 +41,24 @@
     -webkit-text-stroke-color: var(--white);
     -webkit-text-fill-color: var(--green);
 }
+
+.by-line{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: space-between;
+}
+
+.by-line span:hover{
+    color: var(--red);
+}
+
+.author{
+    font-size: 2rem;
+}
+.genre{
+    font-size: 1.5rem;
+}
+.tags{
+  font-size: 1rem;
+}

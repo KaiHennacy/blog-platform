@@ -32,8 +32,7 @@
            <div class="post-container">
                 <section class="post" th:each="post: ${posts}">
                     <a th:href="|/${post.id}|">
-                        <h1 class="post_header" th:text="${post.title}">My Trip to Cedar Point</h1>
-                        <p class="short-content" th:text="${post.shortContent}">So first what happened was...</p>             
+                        <h1 class="post_header" th:text="${post.title}">My Trip to Cedar Point</h1>             
                     </a>
                    <div class="by-line">
                         <a th:href="|/authors/${post.author.id}|"><span class="author" th:text="${post.author.name}">Kai Hennacy</span></a>

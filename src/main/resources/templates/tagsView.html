@@ -28,6 +28,8 @@
             </nav>
     </header> 
     <main>
+    <div class="main-wrapper">
+        <div class="tag-list">
         <section class="tags__body">
             <article class="tag-item" th:each="tag: ${tags}">
                 <a th:href="|/tags/${tag.id}|">
@@ -35,17 +37,17 @@
                 </a>
             </article>
         </section>
-
-        <section>
-            <h4>Create a Tag</h4>
+        </div>
+        <section class="new-tag-form">
             <form class="tag-form" action="add-empty-tag" method="POST">
-                <label>
+                <label>Create a Tag
                     <input type="text" name="name" placeholder="ex: Fun"/>
                 </label>
                 <button type="submit">Submit</button>
             </form>
 
         </section>
+    </div>
     </main>
     <footer class="footer">
             <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
