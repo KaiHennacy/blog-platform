@@ -1,0 +1,31 @@
+.category-card-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 2rem;
+	padding: 2rem;
+	width: 100%;
+}
+
+.card {
+	background-color: var(--light-brown);
+	padding: 2rem;
+	margin: 1rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	min-width: min-content;
+	border-radius: 0.5rem;
+}
+.card__title {
+	font-weight: bold;
+	font-size: 2.5rem;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--black);
+	-webkit-text-fill-color: var(--yellow);
+}
+
+.card__title:hover {
+	-webkit-text-stroke-color: var(--white);
+	-webkit-text-fill-color: var(--light-brown);
+}

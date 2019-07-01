@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Authors</title>
+    <link rel="stylesheet" type="text/css" href="/css/base/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/header.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/footer.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/pages/authorsView.css" />
 </head>
 <body>
-    <Header> 
-        <h1 class=header_text>All Authors</h1>
-        <a class="header__text" href="/home/">Home</a> 
-    </Header>
+    <header class="header">
+        <h1 class="header__Logo">Kaisaac's Blog</h1>
+            <nav class="header__nav">
+                <ul class="header__nav__list">
+                    <li><a th:href="@{~/home}">Home</a></li>
+                    <li><a th:href="@{~/posts}">Posts</a></li>
+                    <li><a th:href="@{~/tags/}">Tags</a></li>
+                    <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/posts/new}">Create+</a></li>
+                </ul> 
+            </nav>
+    </header> 
 <main>
     <div class="author-list">
                 <section class="author" th:each="author: ${authors}">
@@ -31,5 +45,8 @@
         </form>
     </section>
     </main>
+    <footer class="footer">
+            <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
+    </footer>
     </body>
     </html>

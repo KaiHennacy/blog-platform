@@ -27,7 +27,7 @@ public class TagController {
 		return "tagsView";
 	}
 	
-	@RequestMapping("{id}/")
+	@RequestMapping("{id}")
 	public String getSingleGenre(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("tag", tagRepo.findById(id).get());
 		return "singleTagView";

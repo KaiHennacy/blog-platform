@@ -80,6 +80,10 @@ public class Post {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 		return dtf.format(date);
 	}
+	
+	public LocalDateTime getDateAndTime() {
+		return date;
+	}
 
 	@Override
 	public int hashCode() {

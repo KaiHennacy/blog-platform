@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Author</title>
+    <link rel="stylesheet" type="text/css" href="/css/base/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/header.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/footer.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/pages/singleAuthorView.css" />
 </head>
 <body>
-    <header> 
-    <h1 class="header__text">Author Page</h1>
-    <a class="header__text" href="/authors/">Back to All Authors List</a>
-    <a class="header__text" href="/home/">Home</a>
-    </header>
+    <header class="header">
+        <h1 class="header__Logo">Kaisaac's Blog</h1>
+            <nav class="header__nav">
+                <ul class="header__nav__list">
+                    <li><a th:href="@{~/home}">Home</a></li>
+                    <li><a th:href="@{~/posts}">Posts</a></li>
+                    <li><a th:href="@{~/tags/}">Tags</a></li>
+                    <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/posts/new}">Create+</a></li>
+                </ul> 
+            </nav>
+    </header> 
 <main class="main">       
         <h1 class="author-name" th:text="${author.name}">
             Isaac Kim
@@ -25,13 +38,9 @@
         </section>
         
     </main>
-    <footer>
+    <footer class="footer">
             <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/kai-hennacy/" class="fa fa-linkedin"></a>
-                <a href="https://github.com/KaiHennacy" class="fa fa-github"></a>
-            </div>
-        </footer>
+    </footer>
 
 </body>
 </html>

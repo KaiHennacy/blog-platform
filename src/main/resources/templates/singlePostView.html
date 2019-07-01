@@ -6,41 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/base/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/header.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/footer.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/pages/singlePostView.css" />
 </head>
 <body>
-        <header> 
-                <a class="header__text" href="/home/">Home</a>
-                </header>
+    <header class="header">
+        <h1 class="header__Logo">Kaisaac's Blog</h1>
+            <nav class="header__nav">
+                <ul class="header__nav__list">
+                    <li><a th:href="@{~/home}">Home</a></li>
+                    <li><a th:href="@{~/posts}">Posts</a></li>
+                    <li><a th:href="@{~/tags/}">Tags</a></li>
+                    <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/posts/new}">Create+</a></li>
+                </ul> 
+            </nav>
+    </header> 
     <main class="main">       
         <section class="post"> 
-                <h1 class="post_title" th:text="${post.title}">
+                <h2 class="post__title" th:text="${post.title}">
                     My Trip to Cedar Point
-                </h1>
-                <span class="post_date" th:text="${post.date}">
-                    11/11/11
-                </span>
-                <h2 class="post_genre" th:text="${post.genre.name}">
-                    Travel
                 </h2>
-                <!-- <img class="post_image" th:src=""> -->
+                <!-- <figure class="review__figure">
+						<img th:src="@{${reviewModel.imgurl}}" alt="image missing" />
+				</figure> -->
+                <a th:href="|/genres/${post.genre.id}|"><h3 class="post__genre" th:text="${post.genre.name}">
+                    Travel
+                </h3></a>
                 <div class="by-line">
-                    <span class="author" th:text="${post.author.name}">Kai Hennacy</span>
+                    <span> Published on </span>
+                    <span class="post__date" th:text="${post.date}">11/11/11</span>
+                    <span> by </span>
+                    <a th:href="|/authors/${post.author.id}|"><span class="author" th:text="${post.author.name}">Kai Hennacy</span></a>
                 </div>
-                <p class="short-content" th:text="${post.content}">
+                <p class="post__content" th:text="${post.content}">
                     I had a really good time at Cedar Point! I loved the part when I went super fast down, and almost died. The ride's track broke and birds tried to eat my...
                 </p>
         </section>
 
         <section class="tags">
             <h2>Tags</h2>
-            <ul class="tags_body">
-                <li th:each="tag : ${post.tags}" th:text="${tag.name}">
-                    Tag
-                </li>
+            <ul class="tags__body">
+                <a th:each="tag : ${post.tags}" th:href="|/tags/${tag.id}|">
+                    <li th:text="${tag.name}">
+                        Tag
+                    </li>
+                </a>
             </ul>
 
-            <form class="tags_form" action = "/add-tag" method="POST">
+            <form class="tags__form" action = "/add-tag" method="POST">
                 <label>
                     Tag name
                     <input type="text" name="name" value="ex: happy"/>
@@ -51,13 +69,9 @@
         </section>
         
     </main>
-    <footer>
+    <footer class="footer">
             <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/kai-hennacy/" class="fa fa-linkedin"></a>
-                <a href="https://github.com/KaiHennacy" class="fa fa-github"></a>
-            </div>
-        </footer>
+    </footer>
 
 </body>
 </html>

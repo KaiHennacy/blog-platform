@@ -35,13 +35,13 @@ public class GenreController {
 		return "singleGenreView";
 	}
 	
-	@PostMapping("addgenre")
+	@PostMapping("add-genre")
 	public String addGenre(String name) throws Exception {
-//		Collection<Genre> genres = (Collection<Genre>) genreRepo.findAll();
-//		if(!genres.contains(genreRepo.findByName(name))) {
+		Collection<Genre> genres = (Collection<Genre>) genreRepo.findAll();
+		if(!genres.contains(genreRepo.findByName(name))) {
 			Genre genreToAdd = new Genre(name);
 			genreRepo.save(genreToAdd);
-//		}
-		return "redirect:/genres/" + genreRepo.findByName(name).getId();
+		}
+		return "redirect:/genres/";
 	}
 }

@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/base/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/header.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/footer.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/pages/genresView.css" />
 </head>
 <body>
-    <!-- <header>
-        <div class="flex-wrapper">
-            <img class="site-logo" src="" alt="site-logo">
-            <h1 class="site-name">Kaissaac's Foosball Journey</h1>
-            <nav class="nav-bar">
-                <ul class="nav-bar_list">
-                    <li th:href="@{~/add-post}">Create +</li>
-                    <li>Tags</li>
-                    <li>Genres</li>
-                    <li>About</li>
-                </ul>
+    <header class="header">
+        <h1 class="header__Logo">Kaisaac's Blog</h1>
+            <nav class="header__nav">
+                <ul class="header__nav__list">
+                    <li><a th:href="@{~/home}">Home</a></li>
+                    <li><a th:href="@{~/posts}">Posts</a></li>
+                    <li><a th:href="@{~/tags/}">Tags</a></li>
+                    <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/posts/new}">Create+</a></li>
+                </ul> 
             </nav>
-        </div>
-    </header> -->
+    </header> 
     <main>
         <section class="genre-list">
             <article class="genre-item" th:each="genre: ${genres}">
@@ -33,22 +36,18 @@
         </section>
 
     
-        <form class="genre-form" action="/add-genre/" method="POST">
+        <form class="genre-form" action="add-genre" method="POST">
             <label class="genre-form__field">Genre:
-              <input type="text" name="genre" placeholder="Genre" />
+              <input type="text" name="name" placeholder="Genre" />
             </label>
             <button type="submit">Submit</button>
           </form>
        
 
     </main>
-    <footer>
+    <footer class="footer">
             <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/kai-hennacy/" class="fa fa-linkedin"></a>
-                <a href="https://github.com/KaiHennacy" class="fa fa-github"></a>
-            </div>
-        </footer>
+    </footer>
 
 </body>
 </html>

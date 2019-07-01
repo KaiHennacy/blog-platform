@@ -1,5 +1,6 @@
 package wcci.blogplatform.controllers;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 
 import javax.annotation.Resource;
@@ -33,13 +34,26 @@ public class PostController {
 	TagRepository tagRepo;
 	
 	@RequestMapping("home")
+	public String getHome(Model model) {
+		Collection<Post> posts = (Collection<Post>) postRepo.findAll();
+		LocalDateTime latestDate = LocalDateTime.MIN;
+		Long latestPostId = null;
+		for(Post post : posts) {
+			LocalDateTime postDate = post.getDateAndTime();
+			if(postDate.isAfter(latestDate)) {
+				latestDate = postDate;
+				latestPostId = post.getId();
+			}
+		}
+		model.addAttribute("post", postRepo.findById(latestPostId).get());
+		return "homeView";
+	}
+	
+	@RequestMapping("posts")
 	public String getPosts(Model model) {
 		Collection<Post> posts = (Collection<Post>) postRepo.findAll();
 		model.addAttribute("posts", posts);
-//		Collection<Genre> genres = (Collection<Genre>) genreRepo.findAll();
-//		model.addAttribute("genre", genres);
-		
-		return "homeView";
+		return "postsView";
 	}
 	
 	@RequestMapping("{id}")
@@ -47,7 +61,7 @@ public class PostController {
 		model.addAttribute("post", postRepo.findById(id).get());
 		return "singlePostView";
 	}
-	@RequestMapping("new")
+	@RequestMapping("/posts/new")
 	public String getNewPost(Model model) {
 		model.addAttribute("genres", genreRepo.findAll());
 		model.addAttribute("authors", authorRepo.findAll());

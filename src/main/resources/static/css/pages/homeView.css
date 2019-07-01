@@ -1,0 +1,14 @@
+.greeting {
+	padding: 2rem;
+	font-size: 3rem;
+	display: flex;
+	flex-grow: 1;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.avatar{
+    max-width: 40vw;
+	padding: 1rem;
+}

@@ -6,44 +6,48 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Document</title>
-   <link rel="stylesheet" href="/css/main.css">
+   <link rel="stylesheet" type="text/css" href="/css/base/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/header.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base/footer.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/pages/postsView.css" />
 </head>
 <body>
-    <header>
-       <div class="flex-wrapper">
-           <h1 class="site-name">Kaisaac's Blog</h1>
-           <nav class="nav-bar">
-               <ul class="nav-bar_list">
-                   <li th:href="@{~/add-post}">Create Post+</li>
-               </ul>
-
-           </nav>
-       </div>
-   </header>
+    <header class="header">
+        <h1 class="header__Logo">Kaisaac's Blog</h1>
+            <nav class="header__nav">
+                <ul class="header__nav__list">
+                    <li><a th:href="@{~/home}">Home</a></li>
+                    <li><a th:href="@{~/posts}">Posts</a></li>
+                    <li><a th:href="@{~/tags/}">Tags</a></li>
+                    <li><a th:href="@{~/genres/}">Genres</a></li>
+                    <li><a th:href="@{~/posts/new}">Create+</a></li>
+                </ul> 
+            </nav>
+    </header> 
    <main>
-       <div class="post-river">
-           <section class="post" th:each="post: ${posts}">
-                   <a th:href="|/${post.id}|">
-                   <img class="post_image" src="">
-                   <h3 class="post_header" th:text="${post.title}">My Trip to Cedar Point</h3>
-               </a>
+       <div class="main-wrapper">
+           <div class="post-container">
+                <section class="post" th:each="post: ${posts}">
+                    <a th:href="|/${post.id}|">
+                        <h1 class="post_header" th:text="${post.title}">My Trip to Cedar Point</h1>
+                        <p class="short-content" th:text="${post.shortContent}">So first what happened was...</p>             
+                    </a>
                    <div class="by-line">
-                       <span class="author" th:text="${post.author.name}">Kai Hennacy</span>
-                       <span class="genre" th:text="${post.genre.name}"></span>
-                       <span class="tags" th:each="tag : ${post.tags}" th:text="${tag.name}"></span>
+                        <a th:href="|/authors/${post.author.id}|"><span class="author" th:text="${post.author.name}">Kai Hennacy</span></a>
+                        <a th:href="|/genres/${post.genre.id}|"><span class="genre" th:text="${post.genre.name}">Travel</span></a>
+                        <a th:each="tag : ${post.tags}" th:href="|/tags/${tag.id}|"><span class="tags" th:text="${tag.name}">Fun</span></a>
                    </div>
                    <p class="short-content" th:text="${post.shortContent}">
                    </p>
-           </section>
+                </section>
+            </div>
        </div>
-   </main>
-   <footer>
-           <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
-           <div class="social-icons">
-               <a href="https://www.linkedin.com/in/kai-hennacy/" class="fa fa-linkedin"></a>
-               <a href="https://github.com/KaiHennacy" class="fa fa-github"></a>
-           </div>
-       </footer>
+    </main>
+    <footer class="footer">
+        <small>&copy; 2019 Kai Hennacy & Isaac Kim</small>
+    </footer>
 
 </body>
 </html>
